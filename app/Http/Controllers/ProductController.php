@@ -1,8 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
+use App\Models\Product;
+use Illuminate\Support\Facades\DB;
+use App\Rules\GlbFileRule;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class ProductController extends Controller
 {
@@ -60,5 +64,27 @@ class ProductController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    public function home_view(Request $request)
+    {
+        $search = $request['search'] ?? '';
+        if ($search != '' ) {
+            $product = Product::where('product_name','LIKE',"%$search%")->orWHERE('category','LIKE',"%$search%")->get();
+        }
+        else {
+            $product = Product::all();
+        }
+
+        $products = DB::table('products')
+                ->orderBy('product_id', 'desc')
+                ->take(3)
+                ->get();
+        $trending_products = DB::table('products')
+                ->orderBy('product_id', 'asc')
+                ->take(3)
+                ->get();
+                $data = compact('product','search','products','trending_products');
+                return view('frontend.welcome')->with($data);
     }
 }

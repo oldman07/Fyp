@@ -130,6 +130,10 @@ Route::get('/test',function () {
     return view('test');
 });
 
+Route::get('/about-us',function () {
+    return view('frontend.about-us');
+});
+
 Route::get('/view3D/{id}', [blendermodelController::class, 'show']);
 
 

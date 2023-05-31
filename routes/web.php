@@ -134,6 +134,10 @@ Route::get('/about-us',function () {
     return view('frontend.about-us');
 });
 
+Route::get('/contact-us',function () {
+    return view('frontend.contact-us');
+});
+
 Route::get('/view3D/{id}', [blendermodelController::class, 'show']);
 
 

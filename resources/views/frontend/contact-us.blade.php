@@ -2,7 +2,7 @@
 
 @section('main-section')
    <div class="container">
-    <h1 class="text-center mt-5">About Us</h1>
+    <h1 class="text-center mt-5">Contact Us</h1>
     <div class="row">
         <div class="col-md-6">
             <img src="your-company-logo.png" alt="Company Logo" class="img-fluid rounded-circle">

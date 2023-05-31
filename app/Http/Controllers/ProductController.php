@@ -87,4 +87,22 @@ class ProductController extends Controller
                 $data = compact('product','search','products','trending_products');
                 return view('frontend.welcome')->with($data);
     }
+
+    public function view(Request $request)
+    {
+        // $pagination = Product::paginate(10);
+        $search = $request['search'] ?? '';
+        if ($search != '' ) {
+            $product = Product::where('product_name','LIKE',"%$search%")->orWHERE('category','LIKE',"%$search%")->paginate(21);
+        }
+        else {
+            $product = Product::paginate(21);
+        }
+
+        $data = compact('product','search');
+
+        return view('shop.shop')->with($data);
+    }
+
+
 }

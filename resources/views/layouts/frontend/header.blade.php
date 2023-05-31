@@ -34,7 +34,7 @@
         <div class="container px-lg-3">
           <nav class="navbar navbar-expand-lg navbar-light py-3 px-lg-0">
 
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand"href="{{url('/')}}">
               <span class="fw-bold text-uppercase text-dark">modern ecommerce</span>
             </a>
 

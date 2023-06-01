@@ -2,6 +2,19 @@
 
 @section('main-section')
 
+@foreach ($products as $product)
+<div class="items">
+
+  <div class="img img1"><button class="button" id="Ok"><a href="{{ url('/individual') }}/{{ $product->product_id }}">
+    <img src="{{ asset('storage/uploads/images/' . $product->product_image) }}" alt="Product Image">
+  </a></div></button>
+  <div class="name">{{ $product->product_name }}</div>
+  <div class="price">Rs. {{ $product->price }}</div>
+  <div class="price"> Catergory {{ $product->category }}</div>
+  <br>
+
+</div>
+@endforeach
 <div class="modal fade" id="productView" tabindex="-1">
         <div class="modal-dialog modal-lg modal-dialog-centered">
           <div class="modal-content overflow-hidden border-0">
@@ -75,6 +88,19 @@
           </header>
           <div class="row">
             <!-- PRODUCT-->
+            @foreach ($products as $product)
+            {{-- <div class="items">
+
+              <div class="img img1"><button class="button" id="Ok"><a href="{{ url('/individual') }}/{{ $product->product_id }}">
+                <img src="{{ asset('storage/uploads/images/' . $product->product_image) }}" alt="Product Image">
+              </a></div></button>
+              <div class="name">{{ $product->product_name }}</div>
+              <div class="price">Rs. {{ $product->price }}</div>
+              <div class="price"> Catergory {{ $product->category }}</div>
+              <br>
+
+            </div> --}}
+
             <div class="col-xl-3 col-lg-4 col-sm-6">
               <div class="product text-center">
                 <div class="position-relative mb-3">
@@ -88,9 +114,10 @@
                   </div>
                 </div>
                 <h6> <a class="reset-anchor" href="detail.html">Kui Ye Chen’s AirPods</a></h6>
-                <p class="small text-muted">$250</p>
+                <p class="small text-muted">$ . {{ $product->price }}</p>
               </div>
             </div>
+            @endforeach
             <!-- PRODUCT-->
             <div class="col-xl-3 col-lg-4 col-sm-6">
               <div class="product text-center">

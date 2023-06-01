@@ -63,7 +63,7 @@ Route::get('/dashboard', function () {
 
 Route::get('/product', function () {
     return view('backend/product_add');
-})->middleware(['auth', 'verified'])->name('product_add');
+})->middleware(['auth', 'verified'])->name('product');
 
 Route::get('/edit_video', function () {
     return view('backend/edit_video');

@@ -73,6 +73,10 @@ Route::get('/edit_3dmodel', function () {
     return view('backend/edit_3dmodel');
 })->middleware(['auth', 'verified'])->name('edit_3dmodel');
 
+Route::get('/admins', function () {
+    return view('backend/edit_3dmodel');
+})->middleware(['auth', 'verified'])->name('admins');
+
 
 
 //adding the product to database

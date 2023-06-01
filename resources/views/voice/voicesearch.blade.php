@@ -2,10 +2,21 @@
 
 @section('main-section')
 
-    <h1>Record Audio</h1>
+<body-visual>
+    <div class="container-voice ">
+        <h1>Record Audio</h1>
+        <button id="recordButton" class="record-button">Start Recording</button>
+        <button id="stopButton" class="stop-button" disabled>Stop Recording</button>
+        <div class="player-wrapper">
+        <audio id="player" controls></audio>
+      </div>
+      </div>
+
+</body-visual>
+    <!-- <h1>Record Audio</h1>
     <button id="recordButton">Start Recording</button>
     <button id="stopButton" disabled>Stop Recording</button>
-    <audio id="player" controls></audio>
+    <audio id="player" controls></audio> -->
 
     <script>
         const recordButton = document.getElementById('recordButton');

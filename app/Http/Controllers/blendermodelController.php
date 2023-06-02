@@ -56,10 +56,10 @@ public function renderBlenderVideo($modelPath, $type)
 {
     set_time_limit(300); // 5 minutes
     $blenderPath = 'D:\blender\blender.exe';
-    $pythonScriptPath = 'D:\\basit-fyp\\fyp_code\\fyp\\laravel\\resources\\scripts\\blender_video.py';
+    $pythonScriptPath = 'D:\\basit-fyp\\fyp_code\\fyp\\resources\\scripts\\blender_video.py';
 
     // Add the base path to the model path
-    $basePath = 'D:\\basit-fyp\\fyp_code\\fyp\\laravel\\storage\\app\\';
+    $basePath = 'D:\\basit-fyp\\fyp_code\\fyp\\storage\\app\\';
     $fullModelPath = $basePath . $modelPath;
 
     // Define the output video path

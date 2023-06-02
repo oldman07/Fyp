@@ -57,9 +57,19 @@ Route::get('/shipping', function () {
     return view('shop/shipping');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/individual', function () {
+    return view('shop/individual');
+});
+
+Route::get('/shipping-old', function () {
+    return view('shop/shipping_old');
+});
+
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/dashboard', [ShippingController::class,'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/product', function () {
     return view('backend/product_add');

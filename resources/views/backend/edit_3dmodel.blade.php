@@ -27,7 +27,7 @@
     <br>
     <select name="type" id="type" required>
     <option value="360">360 Animation</option>
-    <option value="cenematic">Cinematics</option>
+    <option value="cenematic">Cinematics </option>
     </select>
     <br>
     <br>

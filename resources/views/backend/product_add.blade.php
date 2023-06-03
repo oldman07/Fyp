@@ -1,6 +1,6 @@
 <x-app-layout>
     <div class="form-styling">
-    <div>
+    <div class='styling-abubakr'>
 
 
     <form method="POST" action="{{ url('/') }}/product" enctype="multipart/form-data">

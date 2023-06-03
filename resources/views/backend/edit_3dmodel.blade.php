@@ -15,6 +15,7 @@
 
 <x-app-layout>
     <div class="form-styling">
+    <div class='styling-abubakr'>
         <h1>Upload glTF Model</h1>
 
 
@@ -75,6 +76,7 @@
         Your browser does not support the video tag.
     </video>
 </div>
+    </div>
     </div>
    
 

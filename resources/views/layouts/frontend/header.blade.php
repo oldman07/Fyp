@@ -71,16 +71,6 @@
                   </form> --}}
                 </li>
                 <li class="nav-item">
-                    @if (auth()->check())
-                        <li><a href="{{ url('/dashboard') }}" class="nav-link under"><i class="fas fa-user me-1 text-gray fw-normal"></i>Dashboard</a></li>
-                    @else
-                         <li><a href="/login" class="nav-link under"><i class="fas fa-user me-1 text-gray fw-normal"></i>Login</a></li>
-                    @endif
-
-                  {{-- <a class="nav-link" href= "{{url('/login')}}">
-                    <i class="fas fa-user me-1 text-gray fw-normal"></i>Login
-                  </a> --}}
-                </li>
                 <li class="nav-item">
                   <a class="nav-link" href= "{{url('/image-search')}}">
                     <i class="fas fa-camera"></i>
@@ -91,6 +81,17 @@
                     <i class="fas fa-microphone"></i>
                   </a>
                 </li>
+                    @if (auth()->check())
+                        <li><a href="{{ url('/dashboard') }}" class="nav-link under"><i class="fas fa-user me-1 text-gray fw-normal"></i>Dashboard</a></li>
+                    @else
+                         <li><a href="/login" class="nav-link under"><i class="fas fa-user me-1 text-gray fw-normal"></i>Login</a></li>
+                    @endif
+
+                  {{-- <a class="nav-link" href= "{{url('/login')}}">
+                    <i class="fas fa-user me-1 text-gray fw-normal"></i>Login
+                  </a> --}}
+                </li>
+               
               </ul>
             </div>
           </nav>
